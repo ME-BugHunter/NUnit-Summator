@@ -56,6 +56,15 @@ namespace Summator.UnitTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         [Test]
+        public void TestSummatorBigNegativeNumbers()
+        {
+            var nums = new int[] { -2000000000, -2000000000, -2000000000 };
+            var actual = Summator.Sum(nums);
+
+            var expected = -6000000000;
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        [Test]
         public void TestSummatorThreeNumbers()
         {
             //Arrange
@@ -70,6 +79,15 @@ namespace Summator.UnitTests
 
         }
         [Test]
+        public void TestSummatorSumZero()
+        {
+            var nums = new int[] { 20, 45, -20, -45 };
+            var actual = Summator.Sum(nums);
+
+            Assert.That(0, Is.EqualTo(actual));
+
+        }
+        /*[Test]
         public void AssertionsExample()
         {
             //assert boolean conditions
@@ -88,7 +106,7 @@ namespace Summator.UnitTests
 
             //Assert.That(90, Is.EqualTo(100), "It's not equal");
 
-        }
+        }*/
 
     }
 }
