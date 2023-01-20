@@ -55,5 +55,19 @@ namespace Summator.UnitTests
             var expected = 8000000000;
             Assert.That(actual, Is.EqualTo(expected));
         }
+        [Test]
+        public void TestSummatorThreeNumbers()
+        {
+            //Arrange
+            var nums = new int[] { 4, 9, -11 };
+            var expected = 2;
+
+            //Act
+            var actual = Summator.Sum(nums);
+
+            //Assert
+            Assert.That(expected, Is.EqualTo(actual));
+
+        }
     }
 }
