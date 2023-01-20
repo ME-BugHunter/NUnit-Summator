@@ -69,5 +69,26 @@ namespace Summator.UnitTests
             Assert.That(expected, Is.EqualTo(actual));
 
         }
+        [Test]
+        public void AssertionsExample()
+        {
+            //assert boolean conditions
+            Assert.That(9 == 9);
+            Assert.That(9, Is.GreaterThan(6));
+
+            //Range Assertions
+            double percentage = 99.95;
+            Assert.That(percentage, Is.InRange(80, 100));
+
+            Assert.That("I want to become the best QA", Does.Contain("QA"));
+            //regex
+            string date = "7/11/2021";
+            Assert.That(date, Does.Match(@"^\d{1,2}/\d{1,2}/\d{4}$"));
+            Assert.That(() => "abc"[45], Throws.TypeOf<IndexOutOfRangeException>());
+
+            //Assert.That(90, Is.EqualTo(100), "It's not equal");
+
+        }
+
     }
 }
