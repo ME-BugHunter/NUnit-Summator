@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
+using System.ComponentModel.DataAnnotations;
 
 namespace Summator.UnitTests
 {
@@ -40,7 +42,7 @@ namespace Summator.UnitTests
         [Test]
         public void TestSummatorZeroNumber()
         {
-            var nums = new int[] {  };
+            var nums = new int[] { };
             var actual = Summator.Sum(nums);
 
             var expected = 0;
@@ -107,6 +109,44 @@ namespace Summator.UnitTests
             //Assert.That(90, Is.EqualTo(100), "It's not equal");
 
         }*/
+        [Test]
 
+        public void TestSummatorAveragePositiveNumbers()
+        {
+            var nums = new double[] { 25, 15, 63, 18};
+            var actual = Summator.Average(nums);
+            var expected = 30.25;
+
+            Assert.That(expected, Is.EqualTo(actual));
+        }
+        [Test]
+        public void TestSummatorAverageNegativeNumbers()
+        {
+            var nums = new double[] { -41, -54, -109, -30, -540 };
+            var actual = Summator.Average(nums);
+            var expected = -154.8;
+
+            Assert.That(expected, Is.EqualTo(actual));
+        }
+        [Test]
+        public void TestSummatorAverageEmptyArray()
+        {
+            var nums = new double[] { };
+            var actual = Summator.Average(nums);
+          
+            Assert.That(actual, Is.Not.EqualTo(0));
+        }
+
+
+
+        [Test]
+        public void TestSummatorAverageBigNumbers()
+        {
+            var nums = new double[] {20000000.44, 3000000000.23, 2000000000.98 };
+            var actual = Summator.Average(nums);
+            var expected = 1673333333.8833332;
+            Assert.AreEqual(expected, actual);  
+            
+        }
     }
 }
