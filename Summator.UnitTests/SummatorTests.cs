@@ -36,5 +36,24 @@ namespace Summator.UnitTests
             var expected = 11;
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void TestSummatorZeroNumber()
+        {
+            var nums = new int[] {  };
+            var actual = Summator.Sum(nums);
+
+            var expected = 0;
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        [Test]
+        public void TestSummatorBigNumbers()
+        {
+            var nums = new int[] { 2000000000, 2000000000, 2000000000, 2000000000 };
+            var actual = Summator.Sum(nums);
+
+            var expected = 8000000000;
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 }
