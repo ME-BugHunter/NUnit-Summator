@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +21,15 @@ namespace Summator
                 }
                 return sum;
             }
-        
+        public static double Average(int[] arr)
+        {
+            double sum = 0;
+            for(int i=0; i<arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+            return sum / arr.Length;
+        }
        
 
     }
