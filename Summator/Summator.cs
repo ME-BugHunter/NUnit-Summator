@@ -32,12 +32,12 @@ namespace Summator
             return sum / arr.Length;
         }
 
-        public static double Multiply(int[] arr)
+        public static long Multiply(long[] arr)
         {
-            int product = 1;
+            long product = 1;
             for (int i=0; i<arr.Length; i++)
             {
-                product *= arr[i];
+                product = product * arr[i];
             
             }
             return product;

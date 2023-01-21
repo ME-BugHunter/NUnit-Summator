@@ -113,7 +113,7 @@ namespace Summator.UnitTests
 
         public void TestSummatorAveragePositiveNumbers()
         {
-            var nums = new double[] { 25, 15, 63, 18};
+            var nums = new double[] { 25, 15, 63, 18 };
             var actual = Summator.Average(nums);
             var expected = 30.25;
 
@@ -129,12 +129,13 @@ namespace Summator.UnitTests
             Assert.That(expected, Is.EqualTo(actual));
         }
         [Test]
-        public void TestSummatorAverageEmptyArray()
+        public void TestSummatorAverageZero()
         {
             var nums = new double[] { };
             var actual = Summator.Average(nums);
-          
+
             Assert.That(actual, Is.Not.EqualTo(0));
+            Assert.That(actual, Is.Not.EqualTo(1));
         }
 
 
@@ -142,11 +143,53 @@ namespace Summator.UnitTests
         [Test]
         public void TestSummatorAverageBigNumbers()
         {
-            var nums = new double[] {20000000.44, 3000000000.23, 2000000000.98 };
+            var nums = new double[] { 20000000.44, 3000000000.23, 2000000000.98 };
             var actual = Summator.Average(nums);
             var expected = 1673333333.8833332;
-            Assert.AreEqual(expected, actual);  
-            
+            Assert.AreEqual(expected, actual);
+
         }
+        [Test]
+        public void TestSummatorMultiplyPositiveNumbers()
+        {
+            var nums = new long[] { 444, 555, 999 };
+            var actual = Summator.Multiply(nums);
+            var expected = 246173580;
+
+            Assert.That(expected, Is.EqualTo(actual));
+
+        }
+        [Test]
+        public void TestSummatorMultiplyPositiveAndNegativeNum()
+        {
+            var nums = new long[] { -100, -40, 1001, 240 };
+            var actual = Summator.Multiply(nums);
+
+            var expected = 960960000;
+
+            Assert.That(expected, Is.EqualTo(actual));
+
+        }
+        [Test]
+        public void TestSummatorMultiplyBigNumbers()
+        {
+            var nums = new long []{ 2000000000, 43 };
+            var actual = Summator.Multiply(nums);  
+            var expected = 86000000000;
+
+            Assert.That(expected, Is.EqualTo(actual));
+            
+
+        }
+        [Test]
+        public void TestSummatorMultiplyNegativeNumbers()
+        {
+            var nums = new long[] { -50, -25, -9, -56, -108 };
+            var actual = Summator.Multiply(nums);
+            var expected = -68040000;
+
+            Assert.That(expected, Is.EqualTo(actual));
+        }
+
     }
 }
