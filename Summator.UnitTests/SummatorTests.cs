@@ -190,6 +190,14 @@ namespace Summator.UnitTests
 
             Assert.That(expected, Is.EqualTo(actual));
         }
+        [Test]
+        public void TestMultiplyByZero()
+        {
+            var nums = new long[] { 3000000, 3444, 120, 0, 4 };
+            var actual = Summator.Multiply(nums);
+            var expected = 0;
 
+            Assert.That(expected, Is.EqualTo(actual));
+        }
     }
 }
