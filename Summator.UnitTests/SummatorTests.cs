@@ -11,7 +11,9 @@ namespace Summator.UnitTests
         {
             var nums = new int[] { 1, 2, };
             var actual = Summator.Sum(nums);
+
             var expected = 3;
+
             Assert.That(actual, Is.EqualTo(expected));
         }
 
@@ -20,7 +22,9 @@ namespace Summator.UnitTests
         {
             var nums = new int[] { -2, -99 };
             var actual = Summator.Sum(nums);
+
             var expected = -101;
+
             Assert.AreEqual(actual, expected);
         }
 
@@ -29,7 +33,9 @@ namespace Summator.UnitTests
         {
             var nums = new int[] { 11 };
             var actual = Summator.Sum(nums);
+
             var expected = 11;
+
             Assert.That(actual, Is.EqualTo(expected));
         }
 
@@ -38,7 +44,9 @@ namespace Summator.UnitTests
         {
             var nums = new int[] { };
             var actual = Summator.Sum(nums);
+
             var expected = 0;
+
             Assert.That(actual, Is.EqualTo(expected));
         }
 
@@ -47,7 +55,9 @@ namespace Summator.UnitTests
         {
             var nums = new int[] { 2000000000, 2000000000, 2000000000, 2000000000 };
             var actual = Summator.Sum(nums);
+
             var expected = 8000000000;
+
             Assert.That(actual, Is.EqualTo(expected));
         }
 
@@ -56,7 +66,9 @@ namespace Summator.UnitTests
         {
             var nums = new int[] { -2000000000, -2000000000, -2000000000 };
             var actual = Summator.Sum(nums);
+
             var expected = -6000000000;
+
             Assert.That(actual, Is.EqualTo(expected));
         }
 
@@ -77,7 +89,9 @@ namespace Summator.UnitTests
         {
             var nums = new int[] { 20, 45, -20, -45 };
             var actual = Summator.Sum(nums);
+
             var expected = 0;
+
             Assert.That(expected, Is.EqualTo(actual));
         }
 
@@ -103,7 +117,9 @@ namespace Summator.UnitTests
         {
             var nums = new double[] { 25, 15, 63, 18 };
             var actual = Summator.Average(nums);
+
             var expected = 30.25;
+
             Assert.That(expected, Is.EqualTo(actual));
         }
 
@@ -112,7 +128,9 @@ namespace Summator.UnitTests
         {
             var nums = new double[] { -41, -54, -109, -30, -540 };
             var actual = Summator.Average(nums);
+
             var expected = -154.8;
+
             Assert.That(expected, Is.EqualTo(actual));
         }
 
@@ -121,6 +139,7 @@ namespace Summator.UnitTests
         {
             var nums = new double[] { };
             var actual = Summator.Average(nums);
+
             Assert.That(actual, Is.Not.EqualTo(0));
             Assert.That(actual, Is.Not.EqualTo(1));
         }
@@ -130,7 +149,9 @@ namespace Summator.UnitTests
         {
             var nums = new double[] { 20000000.44, 3000000000.23, 2000000000.98 };
             var actual = Summator.Average(nums);
+
             var expected = 1673333333.8833332;
+
             Assert.That(expected, Is.EqualTo (actual));
         }
 
@@ -139,7 +160,9 @@ namespace Summator.UnitTests
         {
             var nums = new long[] { 444, 555, 999 };
             var actual = Summator.Multiply(nums);
+
             var expected = 246173580;
+
             Assert.That(expected, Is.EqualTo(actual));
         }
 
@@ -148,7 +171,9 @@ namespace Summator.UnitTests
         {
             var nums = new long[] { -100, -40, 1001, 240 };
             var actual = Summator.Multiply(nums);
+
             var expected = 960960000;
+
             Assert.That(expected, Is.EqualTo(actual));
         }
 
@@ -157,7 +182,9 @@ namespace Summator.UnitTests
         {
             var nums = new long []{ 2000000000, 43 };
             var actual = Summator.Multiply(nums);  
+
             var expected = 86000000000;
+
             Assert.That(expected, Is.EqualTo(actual));
         }
 
@@ -166,7 +193,9 @@ namespace Summator.UnitTests
         {
             var nums = new long[] { -50, -25, -9, -56, -108 };
             var actual = Summator.Multiply(nums);
+
             var expected = -68040000;
+
             Assert.That(expected, Is.EqualTo(actual));
         }
 
@@ -175,7 +204,9 @@ namespace Summator.UnitTests
         {
             var nums = new long[] { 3000000, 3444, 120, 0, 4 };
             var actual = Summator.Multiply(nums);
+
             var expected = 0;
+
             Assert.That(expected, Is.EqualTo(actual));
         }
     }
