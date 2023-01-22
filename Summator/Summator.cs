@@ -13,15 +13,14 @@ namespace Summator
     {
         public static long Sum(int[] arr)
         {
-         
-
-                long sum = 0;
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    sum += arr[i];
-                }
+            long sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
                 return sum;
             }
+
         public static double Average(double[] arr)
         {
             double sum = 0;
@@ -37,12 +36,9 @@ namespace Summator
             long product = 1;
             for (int i=0; i<arr.Length; i++)
             {
-                product = product * arr[i];
-            
+                product *= arr[i];
             }
             return product;
         }
-       
-
     }
 }
